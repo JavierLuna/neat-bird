@@ -1,5 +1,8 @@
 # NEAT flappybird
 
+This project is part of the "Skynet también juega a Pacman".
+You can find the slides [here](https://slides.com/javierlunamolina/skynet-also-plays-pacman) 
+
 ## How the NEAT algorithm works
 NEAT or *NeuroEvolution of Augmenting Topologies* is basically genetic algorithms applied to neural network construction.
 
