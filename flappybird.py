@@ -22,7 +22,7 @@ BACKGROUND = pygame.image.load('assets/background.png')
 
 
 class AIBird(pygame.sprite.Sprite):
-    asset = 'assets/mihtobird.png'
+    asset = 'assets/redbird.png'
 
     def __init__(self, display_screen, genome, net):
 
@@ -323,12 +323,16 @@ if __name__ == '__main__':
     parser.add_argument('command', choices=('train', 'play'))
     parser.add_argument('--genome_path', help='Path to save/load a genome.', default=None, required=True)
     parser.add_argument('--config', help='Path to the NEAT training config file', default='neat-config')
+    parser.add_argument('--mihto', help="Play with Mihto skin", default=False, action='store_true')
 
     args = parser.parse_args()
 
     config = neat.Config(neat.DefaultGenome, neat.DefaultReproduction,
                          neat.DefaultSpeciesSet, neat.DefaultStagnation,
                          args.config)
+
+    if args.mihto:
+        AIBird.asset = 'assets/mihtobird.png'
 
     if args.command == 'train':
         pop = neat.Population(config)
